@@ -49,3 +49,42 @@ Route::get('/nama/{john}', function(){
 	$id='john';
 	return 'Ini Halaman about '.$id;
 });
+
+Route::get('testmodel', function(){
+	$a = App\Post::all();
+	return $a;
+});
+
+Route::get('testmodel1', function(){
+	$a = App\Post::find(1);
+	return $a;
+});
+
+Route::get('testmodel2', function(){
+	$a = App\Post::where('title','like','%Ciri Keluarga Sakinah%')->get();
+	return $a;
+});
+
+Route::get('testmodel3', function(){
+	$a = App\Post::find(1);
+	$a->title="Ciri Keluarga Sakinah";
+	$a->save();
+	return $a;
+});
+
+Route::get('testmodel4', function(){
+	$a = App\Post::find(1);
+	$a->delete();
+});
+
+Route::get('testmodel5', function(){
+	$a = new App\Post;
+	$a->title="7 amalan pembuka jodoh";
+	$a->content="shalat malam,sedekah,puasa";
+	$a->save();
+	return $a;
+});
+
+Route::get('cektampilan', function(){
+	return view('layouts.master');
+});
