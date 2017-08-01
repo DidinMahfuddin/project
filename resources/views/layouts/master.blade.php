@@ -23,12 +23,9 @@
 				@include('layouts.nav')
 			<!-- End Nav-->
 			<!-- Caroussel -->
-				@include('layouts.caro')
+				<!-- @include('layouts.caro') -->
 			<!-- End Caroussel -->
 			<div class="jumbotron">
-				<h2>
-					Hello, world!
-				</h2>
 				<p>
 					@yield('isi')
 				</p>
